@@ -36,7 +36,7 @@ const PlatformIcon = ({ platforms }: Props) => {
       <HStack marginY={1}>
         {/* HStack is a horizontal stack */}
         {platforms.map((p) => (
-          <Icon as={iconMap[p.slug]} color="gray.500" key={p.id} /> //compilation error due to iconMap[p.slug] as there is no type for iconMap
+          <Icon key={p.id} as={iconMap[p.slug]} color="gray.500" />
         ))}
       </HStack>
     </>
