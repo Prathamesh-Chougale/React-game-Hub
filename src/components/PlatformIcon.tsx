@@ -14,10 +14,10 @@ import { Platform } from "../hooks/useGames";
 import { IconType } from "react-icons";
 
 interface Props {
-  platform: Platform[];
+  platforms: Platform[];
 }
 
-const PlatformIcon = ({ platform }: Props) => {
+const PlatformIcon = ({ platforms }: Props) => {
   const iconMap: { [key: string]: IconType } = {
     //By  [key: string]: IconType  we are telling typescript that iconMap is an object with key as string and value as IconType
     pc: FaWindows,
@@ -35,7 +35,7 @@ const PlatformIcon = ({ platform }: Props) => {
     <>
       <HStack marginY={1}>
         {/* HStack is a horizontal stack */}
-        {platform.map((p) => (
+        {platforms.map((p) => (
           <Icon as={iconMap[p.slug]} color="gray.500" key={p.id} /> //compilation error due to iconMap[p.slug] as there is no type for iconMap
         ))}
       </HStack>
