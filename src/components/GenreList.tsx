@@ -16,7 +16,6 @@ interface Props {
 }
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
-  //   const { Genre } = useGenre();
   const { data, isLoading, err } = useGenre();
 
   if (isLoading) return <Spinner />;
@@ -41,8 +40,6 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 fontSize={"lg"}
                 variant="link"
                 fontWeight={g.id === selectedGenre?.id ? "bold" : "normal"}
-                // whiteSpace="normal"
-                // textAlign="left"
               >
                 {g.name}
               </Button>
